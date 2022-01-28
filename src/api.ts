@@ -1,6 +1,6 @@
 function wrapPromise(promise: Promise<any>): any {
   let status = 'pending';
-  let result: State[] | Error;
+  let result: [] | Error;
   let suspender = promise.then(
     (r) => {
       status = 'success';
@@ -22,12 +22,6 @@ function wrapPromise(promise: Promise<any>): any {
       }
     },
   };
-}
-
-interface State {
-  stateName: string;
-  year: number;
-  population: number;
 }
 
 function makeApiCall() {
