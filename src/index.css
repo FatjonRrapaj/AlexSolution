@@ -8,8 +8,18 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e5e5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer components {
+  .customText {
+    @apply text-base font-bold;
+  }
+  .separator {
+    @apply w-52 h-px bg-black mt-2 mb-2;
+  }
 }
