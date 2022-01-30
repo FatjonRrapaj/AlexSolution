@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { useQuery } from 'react-query';
 
-import fetchStates from './fetchStates';
+import fetchStates from '../api/fetchStates';
 
 const State = lazy(() => import('./State'));
 

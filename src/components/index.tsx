@@ -4,7 +4,7 @@ import { useQueryClient } from 'react-query';
 import States from './States';
 import ErrorBoundary from './ErrorBoundary';
 
-import fetchStates from './fetchStates';
+import fetchStates from '../api/fetchStates';
 
 export default function App() {
   const queryClient = useQueryClient();
