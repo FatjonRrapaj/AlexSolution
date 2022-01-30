@@ -1,15 +1,19 @@
-import State from './State';
+import { lazy } from 'react';
+import { useQuery } from 'react-query';
 
-import fetchStates from './api';
+import fetchStates from './fetchStates';
 
-const states = fetchStates();
+const State = lazy(() => import('./State'));
 
 const States = () => {
-  const statesData = states.read();
+  const { data, isFetching } = useQuery('Recipes', fetchStates);
 
+  if (isFetching) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="flex flex-row flex-wrap">
-      {statesData.map(
+      {data.map(
         ({
           Population: population,
           State: stateName,
